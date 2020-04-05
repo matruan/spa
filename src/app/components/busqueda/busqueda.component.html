@@ -1,0 +1,14 @@
+<h1>Resultado de la busqueda...</h1>
+<hr />
+
+
+<div *ngIf="heroes?.length == 0" class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Ouch, algo no funciona!</h4>
+    <p>Parece que no encontramos ningún resultado para el término {{ termino }} buscado</p>
+    <hr>
+    <p class="mb-0">Intenta con otra cosa!</p>
+</div>
+
+<div class="card-columns">
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+</div>
